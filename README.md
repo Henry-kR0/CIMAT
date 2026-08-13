@@ -5,6 +5,7 @@
 
 ### Ánimos Compañeros, sé que podemos✊🏻
 
+```
 semh-project/
 ├── backend/
 │   ├── server.js         → arranca la API y sirve el dashboard
@@ -15,4 +16,5 @@ semh-project/
     ├── index.html         → estructura del dashboard (igual a tu mockup)
     ├── css/styles.css     → paleta oscura + tarjetas, igual al diseño que ya ajustaste
     └── js/dashboard.js    → consume la API y pinta el mapa (Leaflet), tarjetas e historial
+```
 ```
