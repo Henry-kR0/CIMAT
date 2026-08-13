@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Emergencias - El Salvador</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
 
+<body>
+
+    <button type="button" class="boton-reiniciar" id="btnReiniciar" onclick="reiniciarCuenta(event)">
+        🔄 Volver a llenar cuenta
+    </button>
+
+    <div class="contenedor">
+
+        <header class="encabezado">
+            <div class="icono">🚨</div>
+            <h1>Sistema de Emergencias</h1>
+            <p>El Salvador</p>
+        </header>
+
+        <section id="pantallaRegistro" class="tarjeta">
+            <h2>Registro de usuario</h2>
+
+            <form id="formRegistro">
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" placeholder="Ingrese su nombre" required>
+                </div>
+
+                <div class="campo">
+                    <label for="edad">Edad</label>
+                    <input type="number" id="edad" min="1" max="120" placeholder="Ingrese su edad" required>
+                </div>
+
+                <div class="campo">
+                    <label for="sexo">Sexo</label>
+                    <select id="sexo" required>
+                        <option value="">Seleccione</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="departamento">Departamento</label>
+                    <select id="departamento" required>
+                        <option value="">Seleccione un departamento</option>
+                        <option value="Ahuachapán">Ahuachapán</option>
+                        <option value="Santa Ana">Santa Ana</option>
+                        <option value="Sonsonate">Sonsonate</option>
+                        <option value="Chalatenango">Chalatenango</option>
+                        <option value="La Libertad">La Libertad</option>
+                        <option value="San Salvador">San Salvador</option>
+                        <option value="Cuscatlán">Cuscatlán</option>
+                        <option value="La Paz">La Paz</option>
+                        <option value="Cabañas">Cabañas</option>
+                        <option value="San Vicente">San Vicente</option>
+                        <option value="Usulután">Usulután</option>
+                        <option value="San Miguel">San Miguel</option>
+                        <option value="Morazán">Morazán</option>
+                        <option value="La Unión">La Unión</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="municipio">Municipio</label>
+                    <select id="municipio" required>
+                        <option value="">Seleccione un municipio</option>
+                        <option value="Ahuachapán Norte">Ahuachapán Norte</option>
+                        <option value="Ahuachapán Centro">Ahuachapán Centro</option>
+                        <option value="Ahuachapán Sur">Ahuachapán Sur</option>
+                        <option value="Cabañas Este">Cabañas Este</option>
+                        <option value="Cabañas Oeste">Cabañas Oeste</option>
+                        <option value="Chalatenango Norte">Chalatenango Norte</option>
+                        <option value="Chalatenango Centro">Chalatenango Centro</option>
+                        <option value="Chalatenango Sur">Chalatenango Sur</option>
+                        <option value="Cuscatlán Norte">Cuscatlán Norte</option>
+                        <option value="Cuscatlán Sur">Cuscatlán Sur</option>
+                        <option value="La Libertad Norte">La Libertad Norte</option>
+                        <option value="La Libertad Centro">La Libertad Centro</option>
+                        <option value="La Libertad Oeste">La Libertad Oeste</option>
+                        <option value="La Libertad Este">La Libertad Este</option>
+                        <option value="La Libertad Costa">La Libertad Costa</option>
+                        <option value="La Libertad Sur">La Libertad Sur</option>
+                        <option value="La Paz Oeste">La Paz Oeste</option>
+                        <option value="La Paz Centro">La Paz Centro</option>
+                        <option value="La Paz Este">La Paz Este</option>
+                        <option value="La Unión Norte">La Unión Norte</option>
+                        <option value="La Unión Sur">La Unión Sur</option>
+                        <option value="Morazán Norte">Morazán Norte</option>
+                        <option value="Morazán Sur">Morazán Sur</option>
+                        <option value="San Miguel Norte">San Miguel Norte</option>
+                        <option value="San Miguel Centro">San Miguel Centro</option>
+                        <option value="San Miguel Oeste">San Miguel Oeste</option>
+                        <option value="San Salvador Norte">San Salvador Norte</option>
+                        <option value="San Salvador Oeste">San Salvador Oeste</option>
+                        <option value="San Salvador Este">San Salvador Este</option>
+                        <option value="San Salvador Centro">San Salvador Centro</option>
+                        <option value="San Salvador Sur">San Salvador Sur</option>
+                        <option value="San Vicente Norte">San Vicente Norte</option>
+                        <option value="San Vicente Sur">San Vicente Sur</option>
+                        <option value="Santa Ana Norte">Santa Ana Norte</option>
+                        <option value="Santa Ana Centro">Santa Ana Centro</option>
+                        <option value="Santa Ana Este">Santa Ana Este</option>
+                        <option value="Santa Ana Oeste">Santa Ana Oeste</option>
+                        <option value="Sonsonate Norte">Sonsonate Norte</option>
+                        <option value="Sonsonate Centro">Sonsonate Centro</option>
+                        <option value="Sonsonate Este">Sonsonate Este</option>
+                        <option value="Sonsonate Oeste">Sonsonate Oeste</option>
+                        <option value="Usulután Norte">Usulután Norte</option>
+                        <option value="Usulután Este">Usulután Este</option>
+                        <option value="Usulután Oeste">Usulután Oeste</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Número de teléfono</label>
+                    <input type="tel" id="telefono" placeholder="Ejemplo: 7000-0000" required>
+                </div>
+
+                <button type="submit" class="boton">🚨 REGISTRAR MI CUENTA</button>
+            </form>
+            <div id="mensajeRegistro" class="mensaje"></div>
+        </section>
+
+        <section id="pantallaLogin" class="tarjeta oculto">
+            <h2>🔐 Iniciar sesión</h2>
+            <p class="texto-centro">Bienvenido de nuevo. Ingrese la contraseña requerida para acceder.</p>
+            <p class="texto-ubicacion" id="ubicacionLogin"></p>
+
+            <div class="campo">
+                <label for="passwordLogin">Contraseña de acceso</label>
+                <input type="password" id="passwordLogin" placeholder="Ingrese la contraseña">
+            </div>
+
+            <button type="button" class="boton" onclick="iniciarSesion()">🔓 INGRESAR</button>
+            <div id="mensajeLogin" class="mensaje"></div>
+        </section>
+
+        <section id="pantallaPrincipal" class="tarjeta oculto">
+            <h2>🚨 Panel de Emergencia</h2>
+
+            <div class="datos">
+                <p><strong>Nombre:</strong> <span id="mostrarNombre"></span></p>
+                <p><strong>Edad:</strong> <span id="mostrarEdad"></span></p>
+                <p><strong>Sexo:</strong> <span id="mostrarSexo"></span></p>
+                <p><strong>Ubicación registrada:</strong> <span id="mostrarUbicacion" class="resaltado"></span></p>
+                <p><strong>Teléfono:</strong> <span id="mostrarTelefono"></span></p>
+            </div>
+
+            <div class="emergencia">
+                <h3>🆘 ¿TIENE UNA EMERGENCIA?</h3>
+                <p>Presione el botón para solicitar ayuda.</p>
+                <button type="button" class="boton emergencia-btn" onclick="solicitarAyuda()">🆘 SOLICITAR AYUDA</button>
+            </div>
+
+            <button type="button" class="boton cerrar" onclick="cerrarSesion()">Cerrar sesión</button>
+            <div id="mensajeEmergencia" class="mensaje"></div>
+        </section>
+
+        <footer>Sistema educativo de demostración</footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
