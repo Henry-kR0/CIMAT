@@ -1,0 +1,272 @@
+/* --- VARIABLES Y CONFIGURACIÓN BASE --- */
+:root {
+  --color-primario: #d90429;
+  --color-primario-oscuro: #ef233c;
+  --color-secundario: #2b2d42;
+  --color-fondo: #f4f6f8;
+  --color-tarjeta: #ffffff;
+  --color-texto: #2b2d42;
+  --color-subtexto: #8d99ae;
+  --color-exito: #2a9d8f;
+  --borde-radio: 12px;
+  --sombra: 0 10px 25px rgba(22, 206, 86, 0.658);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- BOTÓN FLOTANTE (ESQUINA SUPERIOR DERECHA) --- */
+.boton-reiniciar {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: var(--color-secundario);
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.boton-reiniciar:hover {
+  background-color: var(--color-primario);
+}
+
+.boton-reiniciar:active {
+  transform: scale(0.95);
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.contenedor {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* --- ENCABEZADO --- */
+.encabezado {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.encabezado .icono {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+.encabezado h1 {
+  font-size: 1.8rem;
+  color: var(--color-secundario);
+  font-weight: 700;
+}
+
+.encabezado p {
+  color: var(--color-subtexto);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- TARJETAS / PANTALLAS --- */
+.tarjeta {
+  background-color: var(--color-tarjeta);
+  padding: 32px 24px;
+  border-radius: var(--borde-radio);
+  box-shadow: var(--sombra);
+  margin-bottom: 20px;
+}
+
+.tarjeta h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--color-secundario);
+  text-align: center;
+}
+
+.oculto {
+  display: none !important;
+}
+
+.texto-centro {
+  text-align: center;
+  color: var(--color-subtexto);
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+/* Destaque para el municipio en el login */
+.texto-ubicacion {
+  text-align: center;
+  font-weight: 700;
+  color: var(--color-primario);
+  margin-bottom: 20px;
+  font-size: 1rem;
+  background-color: #fdf0f0;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* --- FORMULARIOS Y CAMPOS --- */
+.campo {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-secundario);
+}
+
+.campo input,
+.campo select {
+  padding: 12px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  background-color: #fff;
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(217, 4, 41, 0.15);
+}
+
+.campo select:disabled {
+  background-color: #f8fafc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* --- BOTONES --- */
+.boton {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--color-secundario);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
+}
+
+.boton:hover {
+  background-color: #1d1e2c;
+}
+
+.boton:active {
+  transform: scale(0.99);
+}
+
+/* Botón de Emergencia */
+.emergencia-btn {
+  background-color: var(--color-primario);
+  font-size: 1.1rem;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(217, 4, 41, 0.4);
+}
+
+.emergencia-btn:hover {
+  background-color: var(--color-primario-oscuro);
+}
+
+/* Botón Cerrar Sesión */
+.boton.cerrar {
+  background-color: transparent;
+  color: var(--color-subtexto);
+  border: 1px solid #cbd5e1;
+  margin-top: 20px;
+}
+
+.boton.cerrar:hover {
+  background-color: #f1f5f9;
+  color: var(--color-texto);
+}
+
+/* --- VISTA DE DATOS --- */
+.datos {
+  background-color: #f8fafc;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.datos p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.datos p:last-child {
+  margin-bottom: 0;
+}
+
+.datos strong {
+  color: var(--color-secundario);
+}
+
+.resaltado {
+  color: var(--color-primario);
+  font-weight: 700;
+}
+
+/* --- SECCIÓN EMERGENCIA --- */
+.emergencia {
+  text-align: center;
+  border-top: 2px solid #f1f5f9;
+  padding-top: 16px;
+}
+
+.emergencia h3 {
+  color: var(--color-primario);
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.emergencia p {
+  font-size: 0.85rem;
+  color: var(--color-subtexto);
+  margin-bottom: 14px;
+}
+
+/* --- MENSAJES Y PIE DE PÁGINA --- */
+.mensaje {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-subtexto);
+}
